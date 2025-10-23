@@ -1,12 +1,18 @@
 import numpy as np
 import random
+<<<<<<< HEAD
 import time
 
 ### MÉTODO PARA CREAR TABLERO VACIO
+=======
+
+### CREACIÓN DE TABLERO VACIO
+>>>>>>> 310164a296ff92d7f713460f6cd7d4e4b3bbfce5
 def tablero():
     tablero = np.full((10,10), "_")
     return tablero
 
+<<<<<<< HEAD
 ### MÉTODO PARA DISPARAR
 def disparar(tablero, fila, columna):
     if tablero[fila, columna] == "O":
@@ -19,6 +25,8 @@ def disparar(tablero, fila, columna):
         tablero[fila, columna] = "#"
     return tablero
 
+=======
+>>>>>>> 310164a296ff92d7f713460f6cd7d4e4b3bbfce5
 ### MÉTODO PARA COLOCAR BARCOS DE MANERA ALEATORIA EN TABLERO VACIO
 def colocar_barcos(tablero):
 
