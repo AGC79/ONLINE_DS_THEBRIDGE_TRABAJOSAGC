@@ -38,9 +38,18 @@ Antes de comenzar a usar Git, debes configurar tu nombre y dirección de correo 
 
 Abre una terminal y ejecuta los siguientes comandos:
 
+Con estos comandos se introduce una cuenta nueva de Github o se cambia de una cuenta a otra.
+
 ```bash
 git config --global user.name "Tu Nombre"
 git config --global user.email "tuemail@ejemplo.com"
+```
+
+Con estos comandos solo se visualiza el los datos de la cuenta actualmente asociada (usuario y dirección de correo electrónico)
+
+```bash
+git config --global user.name 
+git config --global user.email
 ```
 
 ## 5. Conceptos básicos de Git
@@ -125,3 +134,14 @@ En donde `<branch>` es el nombre del branch que quieres subir. Si estás trabaja
 - [Tutorial interactivo de Git](https://learngitbranching.js.org/)
 
 Espero que esta introducción te haya ayudado a entender qué es Git y GitHub y por qué son herramientas tan importantes para el desarrollo de software y la ciencia de datos. ¡Ahora estás listo para empezar a utilizar Git y GitHub en tus propios proyectos!
+
+
+PARTE DE DESARROLLO - LOS CAMBIOS
+PARTE DE PRODUCCIÓN - PARTE DEL CODIGO PRINCIPAL, EL MAIN
+
+Pull request: alguien quiere subir camabios a una rama y se envia un pull request a todos los miembros de la rama para que lo acepten.
+
+El archivo gitignore incluye archivos que no se van a pushear (por ejemplo credenciales.)
+
+verde = arhivo nuevo
+amarillo = archivo existente pero modificado
