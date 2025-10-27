@@ -1,4 +1,4 @@
-import funciones_agc
+import PROYECTOS.Hundir_la_flota.funciones_agc as funciones_agc
 
 tablero_vacio = funciones_agc.tablero()
 
