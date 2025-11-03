@@ -69,6 +69,7 @@ class Fichero:
                     # print(file)
                     try:
                         shutil.move(file, "Documentos")
+                        print(f"Movido archivo {file} al directorio 'Documentos'")
                     except Exception as e: 
                         print(e)
                         print(f"Este archivo ya existe en la carpeta Documentos.\n Se omite la operación.")
@@ -80,6 +81,7 @@ class Fichero:
                         # print(file)
                         try:
                             shutil.move(file, "Imagenes")
+                            print(f"Movido archivo {file} al directorio 'Imagenes'")
                         except Exception as e: 
                             print(e)
                             print(f"Este archivo ya existe en la carpeta Imagenes.\n Se omite la operación.")
@@ -91,6 +93,7 @@ class Fichero:
                         #print(file)
                         try:
                             shutil.move(file, "Software")
+                            print(f"Movido archivo {file} al directorio 'Software'")
                         except Exception as e:
                             print(e)
                             print(f"Este archivo ya existe en la carpeta Software.\n Se omite la operación.")
@@ -99,6 +102,7 @@ class Fichero:
             if not movido:
                 try:
                     shutil.move(file, "Otros")
+                    print(f"Movido archivo {file} al directorio 'Otros'")
                 except Exception as e:
                     print(e)
                     print(f"Este archivo ya existe en la carpeta Otros.\n Se omite la operación.")
