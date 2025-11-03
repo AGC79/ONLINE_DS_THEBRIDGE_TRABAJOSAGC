@@ -1,5 +1,4 @@
 import os
-import pandas as pd
 import shutil
 
 script_path = os.path.dirname(os.path.abspath('__file__'))
@@ -7,14 +6,14 @@ print("ruta script", script_path)
 os.chdir(os.path.join(script_path, "descargas_agc")) # descargas_agc esta en la mismma carpeta desde en la que se encuentra el script de python
 print("Ruta absoluta del directorio que se quiere ordenar:\n", os.getcwd())
 
-serie_carpetas = pd.Series(["Imagenes", "Documentos", "Software", "Otros"])
+lista_carpetas = ["Imagenes", "Documentos", "Software", "Otros"]
 # print(serie_carpetas)
 
 doc_types = ('.doc', '.docx', '.txt', '.pdf', '.xls', '.ppt', '.xlsx', '.pptx')
 img_types = ('.jpg', '.jpeg', '.png', '.svg', '.gif')
 software_types = ('.exe', '.py','.ipynb')
 
-for dir in serie_carpetas:
+for dir in lista_carpetas:
     os.makedirs(dir, exist_ok=True)
     #if dir not in os.listdir():
         #os.mkdir(dir)
@@ -63,6 +62,6 @@ for file in os.listdir():
             shutil.move(file, "Otros")
         except Exception as e:
             print(e)
-            print(f"Este archivo ya existe en la carpeta Software.\n Se omite la operación.")
+            print(f"Este archivo ya existe en la carpeta Otros.\n Se omite la operación.")
 
 
