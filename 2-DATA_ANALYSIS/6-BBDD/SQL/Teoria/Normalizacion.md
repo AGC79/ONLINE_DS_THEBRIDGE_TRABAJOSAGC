@@ -15,6 +15,8 @@
 - Las tablas se relacionan mediante campos comunes designados como claves primarias y foráneas
 - Permite actualizar y eliminar datos garantizando su precisión
 
+las tablas en sql son arrays muntidimensionales (matriz bidimensional). Las tablas solo admiten datos tabulares (bidimensionalidad)
+
 ## Campos de Clave Primaria y Clave Foránea
 - **Clave primaria**
   - Debe ser única y no puede contener valores nulos
@@ -40,24 +42,33 @@
   - Datos inconsistentes al no actualizar todas las copias de un dato.
 - **Anomalía de eliminación**: 
   - Eliminar datos sin querer al eliminar una fila.
+  - Hay que evaluar si se pierden datos o se duplican.
 - **Anomalía de inserción**: 
   - No se puede insertar cierta información si otra relacionada no existe aún.
 
 > La normalización ayuda a eliminar estas anomalías y mantiene la base de datos consistente.
 
 ## ¿Qué es la Normalización?
+
+A más tablas, mas joins, equilibrio entre rendimiento, tiempo y dinero.
+
 - Proceso para organizar datos con el objetivo de:
   - Eliminar redundancia
   - Almacenar datos en la tabla correcta
-  - Evitar reestructuración al añadir datos
+  - Evitar reestructuración al añadir datos: escalabilidad
 - Existen 5 formas normales (NF), cada una requiere cumplir con la anterior
 - La tercera forma normal (3NF) es suficiente para la mayoría de aplicaciones
+
 
 ## Problemas sin Normalización
 - Dificultades para manejar y actualizar la base de datos
 - Anomalías frecuentes de inserción, actualización y eliminación
 
 ![normalization1.png](img/normalization1.png)
+
+en este caso, en language, varios datos forman un único valor
+
+lo normal es que una tabla crezca en número de registros, no en número de columnas
 
 ### Anomalía de Inserción
 - Si el estudiante aún no selecciona materias, se deben insertar valores nulos → anomalía
