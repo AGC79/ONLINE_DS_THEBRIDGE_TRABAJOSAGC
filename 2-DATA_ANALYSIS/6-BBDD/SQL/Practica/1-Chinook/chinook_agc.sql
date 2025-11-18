@@ -82,8 +82,17 @@ ORDER by Facturas DESC;
 -- 12. Cuántas facturas ha habido en 2009 y 2011
 SELECT COUNT(*) 
 FROM invoices
-WHERE (invoicedate BETWEEN '2009-01-01' AND '2009-12-31') 
-   OR (invoicedate BETWEEN '2011-01-01' AND '2011-12-31');
+WHERE (invoicedate BETWEEN '2009-01-01' AND '2009-12-31') OR 
+(invoicedate BETWEEN '2011-01-01' AND '2011-12-31');
+
+-- OPCIÓN 2 - MIRADA EN CHAT GPT strftime es una función de SQLite (y otros motores de SQL similares) que sirve para extraer o 
+-- formatear partes de una fecha o hora.
+SELECT strftime('%Y', InvoiceDate) AS Year,
+       COUNT(*) AS TotalFacturas
+FROM invoices
+WHERE strftime('%Y', InvoiceDate) IN ('2009','2011')
+GROUP BY Year
+ORDER BY Year;
 
 -- 13. Cuántas facturas ha habido entre 2009 y 2011
 SELECT COUNT(*) FROM invoices
