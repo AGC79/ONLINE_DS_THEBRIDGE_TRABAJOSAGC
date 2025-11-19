@@ -208,5 +208,67 @@ db.clientes.insertMany([
 // db.clientes.find({ nombre: "Laura Gómez" })
 // db.clientes.find({ "direcciones.ciudad": "Barcelona" })
 
-db.clientes.find({"compras.precio": {$gte:350}})
+// db.clientes.find({"compras.precio": {$gte:350}})
 
+// db.clientes.find({"compras.producto": "Laptop"})
+
+// en este caso el filtro pide todo, por eso esta vacío
+// db.clientes.find({}, { nombre: 1, email: 1, _id: 0 })
+
+// db.clientes.find({nombre: 'Laura Gómez'}, { nombre: 1, email: 1, _id: 0 })
+
+// db.clientes.find({nombre: 'Laura Gómez'}, { nombre: 0, email: 0, _id: 0 })
+
+// db.clientes.find({'direcciones.ciudad': 'Barcelona'}, {compras: 1, "direcciones.ciudad": 1, _id: 0 })
+
+// db.clientes.find({"direcciones.pais":"España"}, {"nombre":0,"direcciones.ciudad":0,_id:0})
+
+// db.clientes.find({compras:{$exists:true}})
+
+// db.clientes.find({compras:{$exists:true}}, {compras: 1, email: 1, _id: 0})
+
+// db.clientes.find({compras:{$exists:false}}, {compras: 1, email: 1, _id: 0})
+
+// Aquí "compras.producto" va obligatoriamente con comillas
+// db.clientes.find( { "compras.producto": { $in: ["Laptop" ]} } )
+
+// en un json de javascript compras puede ir on comillas simples/dobles o sin comillas
+// Aquí filtramos por los clientes que tienen compras
+// db.clientes.find( { compras: { $eq: []} } )
+
+// trae los elemeentos de Barcelona que tengan compras
+// db.clientes.find({'direcciones.ciudad': 'Barcelona', compras:{$exists:true}})
+
+// db.clientes.find({$or: [{ 'direcciones.ciudad': 'Barcelona' }, { nombre: 'Maria' }]})
+
+/*
+db.clientes.updateOne(
+  { nombre: "Laura Gómez" },
+  { $set: { email: "laura.nueva@example.com" } }
+)
+*/
+
+/*
+db.clientes.updateMany(
+  { "direcciones.ciudad": "Barcelona" },
+  { $set: { email: "barcelona@barcelona.com" } }
+)
+  */
+
+// db.clientes.find({nombre: 'Laura Gómez'}, {articulos:1})
+
+/*
+db.clientes.updateMany(
+  { _id: ObjectId("691d90427c77cb7cad80bf02") },
+  {
+    $push: {
+      articulos: {
+        $each: [
+          { rating: 2, comentario: "este es el comentario" },
+          { rating: 5, comentario: "este es el comentario de 5" }
+        ]
+      }
+    }
+  }
+)
+  */
